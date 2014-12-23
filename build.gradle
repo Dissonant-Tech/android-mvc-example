@@ -1,6 +1,6 @@
 
-apply plugin: 'android'
 apply plugin: 'eclipse'
+apply plugin: 'android'
 
 buildscript {
     repositories {
