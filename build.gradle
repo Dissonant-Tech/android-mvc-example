@@ -1,12 +1,16 @@
+
+apply plugin: 'android'
+apply plugin: 'eclipse'
+
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.13'
+        classpath 'com.android.tools.build:gradle:0.13.0'
     }
 }
-apply plugin: 'android'
 
 android {
     compileSdkVersion 'Google Inc.:Google APIs:21'
@@ -18,4 +22,8 @@ android {
             proguardFile getDefaultProguardFile('proguard-android.txt')
         }
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
 }
