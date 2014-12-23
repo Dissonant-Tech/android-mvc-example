@@ -21,7 +21,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
+                android:text="Number of times button has been clicked:"
             />
     </LinearLayout>
     <Button
@@ -32,3 +32,4 @@
         />
 </LinearLayout>
 
+<!-- From: file:/home/dissonance/code/android-studio/PassiveMVCDemo/src/main/res/layout/main.xml -->
