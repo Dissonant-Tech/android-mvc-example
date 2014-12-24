@@ -6,13 +6,27 @@ import com.example.passivemvc.view.DemoView;
 
 public class DemoController implements View.OnClickListener {
 
-    private DemoView demoView;
+    private static final String TAG = "DemoController";
 
-    public DemoController(DemoView demoView) { 
+    public interface DemoListener {
+        void onLimitReached(int limit);
+    }
+
+    private DemoView demoView;
+    private DemoListener listener;
+    // Arbitrary limit
+    private int countLimit = 10;
+
+    public DemoController(DemoView demoView, DemoListener listener) { 
 		this.demoView = demoView;
+        this.listener = listener;
     }
 
     public void onClick(View v) {
-        demoView.incrementNumber();
+        if (demoView.getCount() >= countLimit) {
+            listener.onLimitReached(countLimit);
+        } else {
+            demoView.incrementNumber();
+        }
     }
 }
