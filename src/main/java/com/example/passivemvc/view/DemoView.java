@@ -2,7 +2,7 @@ package com.example.passivemvc.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,14 +14,14 @@ public class DemoView extends LinearLayout {
     public DemoView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
-    
-    public View getCounterButton() {
-        return this.findViewById(R.id.counter_Button);
-    }
 
     public void incrementNumber() {
         int count = getCount();
         setCount(++count);
+    }
+
+    public void setListeners(OnClickListener listener) {
+        ((Button) this.findViewById(R.id.counter_Button)).setOnClickListener(listener);
     }
 
     public int getCount() {
